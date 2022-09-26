@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LoanViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Loans</h1>
+<p>
+
+    <a asp-controller="Loan" asp-action="Create">Create Loan</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <p>@item.FirstName</p>
+            </td>
+            <td>
+                <p> @item.LastName</p>
+            </td>
+            <td>
+                <p> @item.BookName</p>
+            </td>
+            <td>
+                <a asp-controller="Loan" asp-action="Delete" asp-route-id="@item.Loan.LoanID">Return book</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿@model Loan
+
+
+
+<h3>Confirm</h3>
+<div>
+    <h4>Loan</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @nameof(Customer.FirstName)
+
+        </dt>
+        <dt class="col-sm-2">
+            @nameof(Book.BookName)
+        </dt>
+    </dl>
+    
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="LoanID" />
+        <input type="submit" value="Return book" class="btn btn-dark" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@model Loan
+
+
+<h3>Create Loan</h3>
+
+<form asp-controller="Loan" asp-action="Create">
+
+
+    <div class="form-horizontal">
+        <select asp-for="CustomerID"
+                asp-items="@(new SelectList(Model.Customer, nameof(Customer.Id), nameof(Customer.FirstName), nameof(Customer.Lastname)))">
+            <option>Select customer</option>
+        </select>
+
+        <select asp-for="BookID" 
+                asp-items="@(new SelectList(Model.Books, nameof(Book.BookID), nameof(Book.BookName)))">
+            <option>Select book</option>
+        </select>
+    </div>
+
+
+
+    <input type="submit" value="Create"class="btn-dark"/>
+
+</form>
+
+
